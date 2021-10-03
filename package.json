@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./src/bin/www.js"
+    "prestart": "babel ./src --out-dir build",
+    "start": "node ./build/bin/www",
+    "startdev": "nodemon --exec babel-node ./src/bin/www",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "postpretty": "yarn lint --fix"
   },
   "dependencies": {
     "@babel/cli": "^7.15.7",
@@ -15,10 +20,14 @@
     "@babel/runtime": "^7.15.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.13",
+    "prettier": "^2.4.1",
     "pug": "2.0.0-beta11"
   }
 }
