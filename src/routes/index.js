@@ -1,8 +1,12 @@
-import express from 'express';
-import { testEnvironmentVariable } from '../settings';
+import { Router } from 'express';
+import MovieController from '../controllers/MovieController';
 
-const indexRouter = express.Router();
+const router = Router();
 
-indexRouter.get('/', (req, res) => res.status(200).json({ message: testEnvironmentVariable }));
+router.get('/', MovieController.getAllMovies);
+router.post('/', MovieController.addMovie);
+router.get('/:id', MovieController.getAMovie);
+router.put('/:id', MovieController.updatedMovie);
+router.delete('/:id', MovieController.deleteMovie);
 
-export default indexRouter;
+export default router;
