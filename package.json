@@ -9,7 +9,12 @@
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix",
-    "test": "export NODE_ENV=test &&  sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register"
+    "test": "export NODE_ENV=test &&  sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "build": "rm -rf ./build && babel -d ./build ./src -s",
+    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
+    "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
+    "coverage": "nyc npm test && npm run generate-lcov && npm run coveralls-coverage && npm run codeclimate-coverage"
   },
   "dependencies": {
     "@babel/cli": "^7.15.7",
