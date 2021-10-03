@@ -1,6 +1,6 @@
 {
   "name": "cs3219-taskb",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "prestart": "babel ./src --out-dir build",
@@ -33,8 +33,12 @@
     "morgan": "~1.9.1",
     "nodemon": "^2.0.13",
     "nyc": "^15.1.0",
+    "path": "^0.12.7",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
     "prettier": "^2.4.1",
     "pug": "2.0.0-beta11",
+    "sequelize": "^6.6.5",
     "sinon-chai": "^3.7.0",
     "supertest": "^6.1.6"
   }
