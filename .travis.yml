@@ -12,6 +12,7 @@ install:
   - npm install
 before_script:
   - psql -c 'create database movie_test;' -U postgres
+  - psql -c 'create database movies;' -U postgres
   - sequelize db:migrate
 script:
   - npm test

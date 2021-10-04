@@ -1,32 +1,35 @@
 require('dotenv').config();
 
 module.exports = {
-  // If using online database
+  // If using onine database
   // development: {
   //   use_env_variable: 'DATABASE_URL'
   // },
 
   development: {
-    database: 'movies',
-    username: 'postgres',
-    password: 'Password12!',
-    host: '127.0.0.1',
+    database: process.env.DEV_DB_NAME,
+    username: process.env.DEV_DB_USER,
+    password: process.env.DEV_DB_PASS,
+    host: process.env.DEV_DB_HOST,
     dialect: 'postgres',
   },
 
   test: {
-    database: 'movie_test',
-    username: 'postgres',
-    password: 'Password12!',
-    host: '127.0.0.1',
+    database: process.env.TEST_DB_NAME,
+    username: process.env.TEST_DB_USER,
+    password: '',
+    host: process.env.TEST_DB_HOST,
     dialect: 'postgres',
   },
 
   production: {
-    database: process.env.DB_NAME,
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    host: process.env.DB_HOST,
+    use_env_variable: 'DATABASE_URL',
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
+    },
   },
 };
