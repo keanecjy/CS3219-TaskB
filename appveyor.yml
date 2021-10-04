@@ -6,5 +6,6 @@ services:
 install:
   - npm install
 test_script:
+  - psql -c "CREATE DATABASE movie_test;" -U postgres
   - npm test
 build: false
