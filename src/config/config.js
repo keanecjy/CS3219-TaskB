@@ -9,7 +9,7 @@ module.exports = {
   development: {
     database: 'movies',
     username: 'postgres',
-    password: null,
+    password: 'Password12!',
     host: '127.0.0.1',
     dialect: 'postgres',
   },
@@ -17,7 +17,7 @@ module.exports = {
   test: {
     database: 'movie_test',
     username: 'postgres',
-    password: null,
+    password: 'Password12!',
     host: '127.0.0.1',
     dialect: 'postgres',
   },
