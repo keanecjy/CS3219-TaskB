@@ -9,8 +9,7 @@
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix",
-    "test": "set NODE_ENV=test && sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "test_mac": "export NODE_ENV=test && sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
