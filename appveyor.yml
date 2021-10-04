@@ -4,6 +4,7 @@ environment:
 services:
   - postgresql96
 install:
+  - psql --version
   - npm install
 test_script:
   - psql -c "CREATE DATABASE movie_test;" -U postgres
