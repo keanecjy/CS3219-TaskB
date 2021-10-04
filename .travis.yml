@@ -16,9 +16,10 @@ before_script:
   - psql -c 'create database movies;' -U postgres
   - sequelize db:migrate
 deploy:
+  provider: heroku
+  app: cs3219-taskb-postgres
   api_key:
     secure: A4GBIlCGRNeKOr8hOvBoU3OLzou8o/Yz3nBDHFqR2r+ctyppEcRs3zVlK7McY4nOhTV/4Svef0RcTKAqT6/LnpxMGfiTFX0DeEwob8sm/xwQ8hZD1LFjWgQuMpIw1iUt45YYepdFxSX+gK+JHyEECINgZHvCR+dadfB+CVoDMuE2ox5CRRbCMdzvhvceEXZGqB0uSTDXA4DeLa43zCoMIkHIkksKDjijidRXEyHdMbNMNkV0wSW/2jTCZiDofdQy2qO7ksQ2vKNWSd5Q6D2QGBvKE0mnyXqkJAGRbuUcxwOwVMOjLT/Q56k+xQYFb0d7jDqcPpHPfyCD3Lg121MLwzMCt7fVpMJmXTx5SpmAMRp1rnbXKyIBQu9vXGunAa82vrL7sWrje6fHuLQt6Vz/hPwwlTribPZi9KCTkOymAf/Xt44GxkumvZI7W4g0TRta65WTVGCZfxuMcJgoIbwgh9R9x11viyQ/HcakRhW9uNVyBlbXSIcsKtP7Cc+qZM5PlA1o8qWqRzLu8F21S+HO3cdYmqDwKP17A0Iz6Parred+AAIWGkatNKXVMnnyyxQxRgmPt/ztqqjioV7P2/OJare5wildKFEh2ogFT6T1PzLhxknaM6l2fc3kwqMtj+7HhjbakM5kR+lpua9iyKYmyldAHD42gMg2+x/BKAfOBRI=
-  provider: heroku
 script:
   - npm test
 after_success:
