@@ -10,8 +10,6 @@
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix",
     "test": "export NODE_ENV=test &&  sequelize db:migrate:undo:all  && sequelize db:migrate  && nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
-    "build": "rm -rf ./build && babel -d ./build ./src -s",
-    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
