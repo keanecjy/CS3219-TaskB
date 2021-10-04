@@ -1,5 +1,37 @@
-# Setting up dev environment
+# CS3219 Task B1, B2, B3
 
+[![Build Status](https://app.travis-ci.com/keane-123/cs3219-taskb.svg?token=MaHWy7usFLCw5aP2t2ft&branch=master)](https://app.travis-ci.com/keane-123/cs3219-taskb)
+
+## Setting up
+1. Create a `.env` file at the root of the directory and copy the content of `.env.example` to `.env` Change the user and password of the database accordingly. 
+2. Run `npm i` to install the dependencies. 
+3. Start postgres server
+   1. For MacOS: Run `brew services start postgresql` to make sure PostgreSQL is running
+4. Run `createdb movies` to create the database for development. 
+5. Run `createdb movie_test` to create the database for testing. 
+6. Run `sequelize db:migrate` to run database migration. 
+7. Run `npm run startdev` to start the server.
+8. The deployed API can be accessed at http://localhost:3000/api/movies
+
+## Testing
+
+### Using Postman
+1. Use the postman collection to run the tests in order (https://www.getpostman.com/collections/7c4af0a85f99e650494a)
+2. Feel free to add your own tests
+
+### Local Test
+1. Run `npm run test`
+2. You should see the CRUD endpoints being tested, with 12 tests in total passing.
+
+![img.png](localTests.png)
+
+### Travis
+Tests for travis are triggered by:
+1. Installing dependencies and building project
+2. Setting environment variables
+3. Running tests
+
+![img.png](travisTests.png)
 
 
 ## Resources:
