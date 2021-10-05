@@ -1,8 +1,8 @@
 import logger from 'morgan';
 import express from 'express';
 import cookieParser from 'cookie-parser';
-import router from './routes/index';
 import cors from 'cors';
+import router from './routes/index';
 
 const app = express();
 
