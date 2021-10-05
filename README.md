@@ -2,7 +2,7 @@
 
 [![Build Status](https://app.travis-ci.com/keane-123/cs3219-taskb.svg?token=MaHWy7usFLCw5aP2t2ft&branch=master)](https://app.travis-ci.com/keane-123/cs3219-taskb)
 
-The endpoint can be accessed at https://cs3219-taskb-postgres.herokuapp.com/
+The endpoint can be accessed at https://cs3219-taskb-postgres.herokuapp.com/ <br>
 Deployment is automated through the use of heroku and travis. Each push into the master branch triggers travis, which runs both CI and CD.
 
 ## Setting up
