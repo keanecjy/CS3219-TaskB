@@ -14,6 +14,7 @@ const db = {};
 
 let sequelize;
 if (config.environment === 'production') {
+  console.log("Starting sequelize");
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 
   console.log(process.env[config.use_env_variable]);
