@@ -15,6 +15,10 @@ const db = {};
 let sequelize;
 if (config.environment === 'production') {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
+
+  console.log(process.env[config.use_env_variable]);
+  console.log(sequelize);
+
   sequelize = new Sequelize(
     process.env.DB_NAME,
     process.env.DB_USER,
@@ -30,6 +34,7 @@ if (config.environment === 'production') {
       logging: true,
     }
   );
+  console.log(sequelize);
 } else {
   sequelize = new Sequelize(
     config.database,
