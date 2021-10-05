@@ -5,7 +5,7 @@
   "scripts": {
     "prestart": "babel ./src --out-dir build",
     "start": "node ./build/bin/www",
-    "startdev": "nodemon --exec babel-node ./src/bin/www",
+    "startdev": "sequelize db:migrate:undo:all  && sequelize db:migrate && nodemon --exec babel-node ./src/bin/www",
     "lint": "./node_modules/.bin/eslint ./src",
     "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
     "postpretty": "npm run lint --fix",

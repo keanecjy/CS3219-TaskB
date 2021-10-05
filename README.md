@@ -2,10 +2,12 @@
 
 [![Build Status](https://app.travis-ci.com/keane-123/cs3219-taskb.svg?token=MaHWy7usFLCw5aP2t2ft&branch=master)](https://app.travis-ci.com/keane-123/cs3219-taskb)
 
+## API endpoint
+
 The endpoint can be accessed at [https://cs3219-taskb-postgres.herokuapp.com/](https://cs3219-taskb-postgres.herokuapp.com/)  <br>
 Deployment is automated through the use of heroku and travis. Each push into the master branch triggers travis, which runs both CI and CD.
 
-## Setting up
+## Setting up locally
 
 1. Create a `.env` file at the root of the directory and copy the content of `.env.example` to `.env` Change the user and password of the database accordingly.
 2. Run `npm i` to install the dependencies.
@@ -13,9 +15,8 @@ Deployment is automated through the use of heroku and travis. Each push into the
    1. For MacOS: Run `brew services start postgresql` to make sure PostgreSQL is running
 4. Run `createdb movies` to create the database for development.
 5. Run `createdb movie_test` to create the database for testing.
-6. Run `sequelize db:migrate` to run database migration.
-7. Run `npm run startdev` to start the server.
-8. The deployed API can be accessed at [http://localhost:3000/api/movies](http://localhost:3000/api/movies)
+6. Run `npm run startdev` to start the server.
+7. The deployed API can be accessed at [http://localhost:3000/api/movies](http://localhost:3000/api/movies)
 
 ## Testing
 
