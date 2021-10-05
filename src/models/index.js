@@ -13,7 +13,7 @@ console.log('this is the environment: ', env);
 const db = {};
 
 let sequelize;
-if (config.environment === 'production') {
+if (env === 'production') {
   console.log("Starting sequelize");
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 
@@ -37,6 +37,7 @@ if (config.environment === 'production') {
   );
   console.log(sequelize);
 } else {
+  console.log("Starting default database creation");
   sequelize = new Sequelize(
     config.database,
     config.username,
