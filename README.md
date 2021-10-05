@@ -2,6 +2,9 @@
 
 [![Build Status](https://app.travis-ci.com/keane-123/cs3219-taskb.svg?token=MaHWy7usFLCw5aP2t2ft&branch=master)](https://app.travis-ci.com/keane-123/cs3219-taskb)
 
+The endpoint can be accessed at https://cs3219-taskb-postgres.herokuapp.com/
+Deployment is automated through the use of heroku and travis. Each push into the master branch triggers travis, which runs both CI and CD.
+
 ## Setting up
 1. Create a `.env` file at the root of the directory and copy the content of `.env.example` to `.env` Change the user and password of the database accordingly. 
 2. Run `npm i` to install the dependencies. 
