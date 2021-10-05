@@ -20,22 +20,22 @@ if (env === 'production') {
   console.log(process.env[config.use_env_variable]);
   console.log(sequelize);
 
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASS,
-    {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      dialect: 'postgres',
-      dialectOption: {
-        ssl: true,
-        native: true,
-      },
-      logging: true,
-    }
-  );
-  console.log(sequelize);
+  // sequelize = new Sequelize(
+  //   process.env.DB_NAME,
+  //   process.env.DB_USER,
+  //   process.env.DB_PASS,
+  //   {
+  //     host: process.env.DB_HOST,
+  //     port: process.env.DB_PORT,
+  //     dialect: 'postgres',
+  //     dialectOption: {
+  //       ssl: true,
+  //       native: true,
+  //     },
+  //     logging: true,
+  //   }
+  // );
+  // console.log(sequelize);
 } else {
   console.log("Starting default database creation");
   sequelize = new Sequelize(
