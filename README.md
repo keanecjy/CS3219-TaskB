@@ -12,7 +12,7 @@ Deployment is automated through the use of heroku and travis. Each push into the
 1. Create a `.env` file at the root of the directory and copy the content of `.env.example` to `.env` Change the user and password of the database accordingly.
 2. Run `npm i` to install the dependencies.
 3. Start postgres server
-   1. For MacOS: Run `brew services start postgresql` to make sure PostgreSQL is running
+   1. For MacOS: Run `brew services start postgresql` or `pg_ctl -D /usr/local/var/postgres start` to make sure PostgreSQL is running
 4. Run `createdb movies` to create the database for development.
 5. Run `createdb movie_test` to create the database for testing.
 6. Run `npm run startdev` to start the server.
